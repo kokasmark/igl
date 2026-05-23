@@ -127,7 +127,7 @@ function App() {
     }));
   };
 
-  const roomCodeFromUri = window.location.pathname.split("/").pop();
+  const roomCodeFromUri = window.location.hash.replace("#", "");
 
   useEffect(() => {
     if (roomCodeFromUri) {
@@ -144,7 +144,7 @@ function App() {
       <div className='w-full'>
         <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 8 }}>
           {roomCode && <span className="badge badge-success cursor-pointer hover:scale-105 transition duration-300" 
-          onClick={()=> navigator.clipboard.writeText(`${window.location.host}${window.location.pathname}${roomCode}`)}>
+          onClick={()=> navigator.clipboard.writeText(`${window.location.host}${window.location.pathname}#${roomCode}`)}>
               {roomCode} <Icon icon='Copy' width={14} height={14} style={{marginLeft: 4}} fill='var(--color-text-success)'/>
             </span>}
           <span className="badge badge-neutral">Round {match.rounds.length}</span>
