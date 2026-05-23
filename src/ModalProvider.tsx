@@ -18,7 +18,7 @@ export function ModalProvider({ children }: { children: ReactNode }) {
       {children}
       {content && (
         <div
-          className="fixed inset-0 flex items-center bg-red-100 justify-center z-50 w-screen h-screen"
+          className="fixed inset-0 flex items-center bg-red-100 justify-center z-50 w-screen h-screen z-101"
           style={{ background: "rgba(0,0,0,0.5)" }}
           onClick={closeModal}
         >

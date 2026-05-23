@@ -66,7 +66,7 @@ export default function RoundPhase({ match, updateMatch, updateIndex }: { match:
                 <button className="btn btn-success" onClick={updateIndex}>Next</button>
             </div>
 
-            <div className="flex w-full items-center justify-evenly">
+            <div className="flex w-full items-center justify-evenly flex-wrap gap-8">
                 {round.players.map((p, i) => {
                     const killReward = Object.entries(p.kills).reduce(
                         (sum, [weapon, kills]) => sum + (WEAPONS[weapon as IWeapon].reward ?? 0) * kills,

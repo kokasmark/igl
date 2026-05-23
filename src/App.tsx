@@ -140,15 +140,15 @@ function App() {
   }, []);
 
   return (
-    <div className="w-screen h-screen flex flex-col items-center justify-start overflow-hidden px-8! py-8!">
-      <div className='w-full'>
-        <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 8 }}>
+    <div className="w-screen h-screen flex flex-col items-center justify-start overflow-hidden px-8! overflow-y-auto scrollbar-none">
+      <div className='w-full sticky top-0 z-100 pt-8! pb-4! border-b-1' style={{background: "var(--color-background-primary)", borderColor: "var(--color-border-tertiary)"}}>
+        <div className='flex gap-4 items-center flex-wrap'>
           {roomCode && <span className="badge badge-success cursor-pointer hover:scale-105 transition duration-300" 
           onClick={()=> navigator.clipboard.writeText(`${window.location.host}${window.location.pathname.slice(0, window.location.pathname.length - 1)}#${roomCode}`)}>
               {roomCode} <Icon icon='Copy' width={14} height={14} style={{marginLeft: 4}} fill='var(--color-text-success)'/>
             </span>}
           <span className="badge badge-neutral">Round {match.rounds.length}</span>
-          <div className="flex gap-2 items-center" style={{marginLeft: 'auto'}}>
+          <div className="flex gap-2 items-center flex-wrap" style={{marginLeft: 'auto'}}>
             {Array.from({ length: 24 }).map((_, i) => {
               const isPlayed = i < match.rounds.length - 1;
 

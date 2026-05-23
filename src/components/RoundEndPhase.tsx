@@ -31,7 +31,7 @@ export default function RoundEndPhase({ match, updateMatch, updateIndex }: { mat
             <button className="btn btn-success" onClick={updateIndex}>Next</button>
         </div>
 
-      <div className="flex gap-3">
+      <div className="flex gap-3 flex-wrap">
         {OUTCOMES.map(o => (
           <div
             key={o.id}

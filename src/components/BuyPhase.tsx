@@ -18,7 +18,7 @@ export default function BuyPhase({ match, updateMatch, updateIndex }: { match: I
                 <button className="btn btn-success" onClick={updateIndex}>Next</button>
             </div>
 
-            <div className="flex w-full items-center justify-evenly">
+            <div className="flex flex-wrap gap-8 w-full items-center justify-evenly">
                 {round.players?.map((p, i) => {
 
                     const isEco = p.money <= 2000;
